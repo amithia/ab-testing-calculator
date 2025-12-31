@@ -1,0 +1,146 @@
+.sample-size-calculator {
+  width: 100%;
+}
+
+.input-section {
+  margin-bottom: 2rem;
+}
+
+.input-card {
+  background: #f9fafb;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.input-hint {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.advanced-toggle button {
+  background: transparent;
+  border: none;
+  color: #667eea;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+}
+
+.advanced-inputs {
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.calculate-button {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.calculate-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.calculate-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #fee2e2;
+  color: #dc2626;
+  border-radius: 8px;
+}
+
+.result-section {
+  margin-top: 2rem;
+}
+
+.result-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.result-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.result-highlight {
+  margin-bottom: 1rem;
+}
+
+.result-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.result-label {
+  display: block;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.result-highlight.secondary .result-number {
+  font-size: 2rem;
+}
+
+.timeline-estimator {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.timeline-estimator h4 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.tip {
+  color: #6b7280;
+  line-height: 1.6;
+}

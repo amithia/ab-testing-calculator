@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { TestResultsCalculator } from './components/TestResultsCalculator';
+import { SampleSizeCalculator } from './components/SampleSizeCalculator';
 
 type Tab = 'results' | 'sample-size';
 
@@ -39,12 +40,7 @@ function App() {
         )}
 
         {activeTab === 'sample-size' && (
-          <div>
-            <h2>Sample Size Calculator</h2>
-            {/* TODO: SampleSizeCalculator component will go here */
-            <p>Sample Size Calculator Component Placeholder</p>
-            }
-          </div>
+          <SampleSizeCalculator />
         )}
       </div>
     </div>
