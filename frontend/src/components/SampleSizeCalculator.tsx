@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { SampleSizeInputs, SampleSizeResult } from '../types';
 import { calculateSampleSize } from '../services/api';
 import './SampleSizeCalculator.css';
+import { exportSampleSizeToPDF } from '../utils/exportPDF';
+
 
 export const SampleSizeCalculator: React.FC = () => {
   const [inputs, setInputs] = useState<SampleSizeInputs>({
@@ -75,6 +77,37 @@ export const SampleSizeCalculator: React.FC = () => {
               {showAdvanced ? '▼' : '▶'} Advanced Settings
             </button>
           </div>
+
+          {result && (
+  <div className="result-section">
+    <div className="result-card">
+      <h3>You Need:</h3>
+      <div className="result-highlight">
+        <span className="result-number">{result.sample_size_per_variant.toLocaleString()}</span>
+        <span className="result-label">visitors per version</span>
+      </div>
+      <div className="result-highlight secondary">
+        <span className="result-number">{result.total_sample_size.toLocaleString()}</span>
+        <span className="result-label">total visitors</span>
+      </div>
+    </div>
+
+    <div className="timeline-estimator">
+      <h4>Timeline Estimate</h4>
+      <p className="tip">
+        Tip: Smaller improvements need more data! To detect a {inputs.baselineRate * 100}% → {inputs.expectedRate * 100}% 
+        change requires {result.sample_size_per_variant.toLocaleString()} visitors per version.
+      </p>
+    </div>
+
+    <button 
+      className="export-button"
+      onClick={() => exportSampleSizeToPDF(inputs, result)}
+    >
+      Export to PDF
+    </button>
+  </div>
+)}
 
           {showAdvanced && (
             <div className="advanced-inputs">

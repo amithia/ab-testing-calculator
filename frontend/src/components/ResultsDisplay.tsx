@@ -3,19 +3,17 @@
 import React from 'react';
 import { TestResults } from '../types';
 import './ResultsDisplay.css';
+import { exportTestResultsToPDF } from '../utils/exportPDF';
 
 interface Props {
   results: TestResults;
 }
 
 export const ResultsDisplay: React.FC<Props> = ({ results }) => {
-  // TODO: Calculate some useful values
   const controlRatePercent = (results.control_rate * 100).toFixed(1);
   const variantRatePercent = (results.variant_rate * 100).toFixed(1);
   const difference = ((results.variant_rate - results.control_rate) * 100).toFixed(1);
   
-  // TODO: Calculate relative improvement
-  // Hint: ((variant - control) / control) * 100
   const relativeImprovement = results.control_rate > 0
     ? (((results.variant_rate - results.control_rate) / results.control_rate) * 100).toFixed(1)
     : '0.0';
@@ -44,11 +42,18 @@ export const ResultsDisplay: React.FC<Props> = ({ results }) => {
         )}
       </div>
 
+      {/* Export Button */}
+      <button 
+        className="export-button"
+        onClick={() => exportTestResultsToPDF(results)}
+      >
+        Export to PDF
+      </button>
+
       {/* Comparison Section */}
       <div className="comparison-section">
         <h3>Conversion Rate Comparison</h3>
         <div className="comparison-bars">
-          {/* TODO: Create visual bars for Version A and B */}
           <div className="comparison-row">
             <span className="version-label">Version A:</span>
             <div className="bar-container">
@@ -91,7 +96,6 @@ export const ResultsDisplay: React.FC<Props> = ({ results }) => {
       </div>
 
       {/* Advanced Stats - Collapsible */}
-      {/* TODO: Add a collapsible section for technical details */}
       <details className="advanced-stats">
         <summary>Show Advanced Statistics</summary>
         <div className="advanced-content">

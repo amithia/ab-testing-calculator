@@ -156,3 +156,20 @@
   font-weight: 600;
   color: #1f2937;
 }
+
+.export-button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 1rem 0;
+  transition: background 0.2s;
+}
+
+.export-button:hover {
+  background: #5568d3;
+}
