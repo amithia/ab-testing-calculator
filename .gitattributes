@@ -1,0 +1,12 @@
+# Ignore dependencies from language stats
+frontend/node_modules/** linguist-vendored
+frontend/build/** linguist-generated
+
+# Mark test files
+**/*.test.ts linguist-detectable=false
+**/*.test.tsx linguist-detectable=false
+
+# Ensure Python and TypeScript are properly detected
+*.py linguist-detectable=true
+*.ts linguist-detectable=true
+*.tsx linguist-detectable=true
